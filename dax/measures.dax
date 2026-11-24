@@ -1,0 +1,31 @@
+// =====================================================
+// MP District Welfare Schemes Monitoring Dashboard
+// DAX Measures
+// NOTE: Adjust the table / column names to match your model.
+// =====================================================
+
+Total Applications =
+SUM ( mp_district_schemes[Applications_Received] )
+
+Avg Approval Rate =
+AVERAGE ( mp_district_schemes[Approval_Rate_Pct] )
+
+Avg Fund Utilization =
+AVERAGE ( mp_district_schemes[Fund_Utilization_Pct] )
+
+Pending Cases =
+SUM ( mp_district_schemes[Pending_Count] )
+
+Avg Pending Days =
+AVERAGE ( mp_district_schemes[Avg_Pending_Days] )
+
+// Optional helper measures
+
+Approved Cases =
+SUM ( mp_district_schemes[Approved_Count] )
+
+Rejected Cases =
+SUM ( mp_district_schemes[Rejected_Count] )
+
+Pending % =
+DIVIDE ( [Pending Cases], [Total Applications] )
